@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRAVE - A World of Flavors Delivered</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./cart.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">
+                    <i class="fas fa-utensils"></i> CRAVE
+                </a>
+                <div class="nav-right">
+                    <div class="search-bar">
+                        <input type="text" id="search-input" placeholder="Search food or restaurants...">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#popular-dishes">Menu</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <div class="auth-buttons">
+                        <a href="#signin" class="btn-auth">Sign In</a>
+                        <a href="#signup" class="btn-auth btn-signup">Sign Up</a>
+                    </div>
+                    <button id="cart-btn" class="btn-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <h1>A World of Flavors, Delivered</h1>
+                <p>Experience the taste of global cuisines, right at your doorstep.</p>
+                <a href="#popular-dishes" class="cta-btn">Explore Menu</a>
+            </div>
+        </section>
+
+        <section id="popular-dishes" id="popular-dishes">
+            <div class="container">
+                <h2 class="section-title">Popular Dishes</h2>
+                <div class="tabs">
+                    <button class="tab-btn active" data-cuisine="kashmiri">Kashmiri</button>
+                    <button class="tab-btn" data-cuisine="indian">Indian</button>
+                    <button class="tab-btn" data-cuisine="japanese">Japanese</button>
+                    <button class="tab-btn" data-cuisine="chinese">Chinese</button>
+                </div>
+                <div id="kashmiri" class="tab-content active"></div>
+                <div id="indian" class="tab-content"></div>
+                <div id="japanese" class="tab-content"></div>
+                <div id="chinese" class="tab-content"></div>
+            </div>
+        </section>
+
+        <section id="reviews">
+            <div class="container">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="review">
+                    <p>"Crave brings the world to my plate! Their Kashmiri Rogan Josh is as authentic as it gets."</p>
+                    <p class="author">- Muskaan.</p>
+                </div>
+                <div class="review">
+                    <p>"I'm addicted to their Paneer Butter Masala. It's so fresh, it feels like I'm dining in Delhi.!"</p>
+                    <p class="author">- Tawheed Tariq.</p>
+                </div>
+                <div class="review">
+                    <p>"Butter chicken at Crave is a culinary delight. Tender chicken in a velvety, spiced tomato sauce offers an exquisite taste. Each mouthful is a heavenly experience, making it a must-try dish."</p>
+                    <p class="author">- Kanchan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <form id="contactForm" class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>About Crave</h3>
+                <p>We're on a mission to bring global flavors to your doorstep, ensuring every meal is an adventure.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#popular-dishes">Menu</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 crave</p>
+                <p>info@crave.food</p>
+                <p>+91 123-4567</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Your Cart <i class="fas fa-shopping-cart"></i></h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <ul id="cart-items"></ul>
+                <div class="cart-summary">
+                    <p>Subtotal: Rs. <span id="cart-subtotal">0.00</span></p>
+                    <p>Delivery Fee: Rs. <span id="delivery-fee">25.00</span></p>
+                    <p class="total">Total: Rs. <span id="cart-total">0.00</span></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="continue-shopping">Continue Shopping</button>
+                <button id="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+<script src="./script.js"></script>
+</body>
+</html>
